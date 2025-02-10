@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 30 21% 85%;
+    --font-title: "Playfair Display", serif;
+    --font-subtitle: "Montserrat", sans-serif;
+    --font-body: "Lato", serif;
+
+    --color-offwhite: #fdfcf8;
+    --color-beige: #ded5ca;
+    --color-medbeige: #b6a9a3;
+    --color-darkbeige: #796b61;
+    --color-blueblack: #323b4c;
+
+    /* --background: 48 55.6% 98.2%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
@@ -28,10 +39,10 @@
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-5: 27 87% 67%; */
   }
 
-  .dark {
+  /* .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
@@ -56,15 +67,25 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
+  } */
 }
 
 @layer utilities {
   .bg-background {
-    background-color: hsl(var(--background));
+    background-color: var(--color-offwhite);
   }
   .text-foreground {
-    color: hsl(var(--foreground));
+    color: var(--color-blueblack);
+  }
+  .font-title{
+    font-family: var(--font-title);
+    font-weight: 900;
+  }
+  .font-subtitle{
+    font-family: var(--font-subtitle);
+  }
+  .font-body{
+    font-family: var(--font-body);
   }
 }
 
@@ -72,9 +93,13 @@
   * {
     @apply border;
     border: none;
+    color: var(--color-blueblack);
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    padding-top: 4rem;
+    z-index: -1;
   }
 }
