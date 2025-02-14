@@ -1,5 +1,6 @@
 import Navbar from "./sections/navbar";
 import Header from "./sections/header";
+import { AboutMe } from "./sections/aboutme";
 
 export default function Home() {
   const navItems = [
@@ -11,7 +12,8 @@ export default function Home() {
     <>
       <Navbar />
       <Header />  
-      {/* <div className="bg-yellow">About Me</div> */}
+      <AboutMe />
+      <div className="mt-[200px]"></div>
     </>
   );
 }

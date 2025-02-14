@@ -101,5 +101,6 @@
     font-family: var(--font-body);
     padding-top: 4rem;
     z-index: -1;
+    justify-items: center;
   }
 }

@@ -5,7 +5,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <div className="relative z-0 h-[640px] w-full">
+    <div className="relative z-0 h-[65vh] w-[90%] mb-[20vh]">
       <div className="flex flex-col md:flex-row items-center justify-center mx-auto h-full ">
         <motion.div
           initial={{ opacity: 0.0, y: 0 }}
@@ -14,7 +14,7 @@ export default function Header() {
             delay: 0.3,
             duration: 0.8,
             ease: "easeInOut",
-          }} className="flex items-center justify-center md:w-[500px]">
+          }} className="flex items-center justify-center w-[550px]">
           <img src="/img/profile-picture.png" alt="profile picture" className="w-[80%]"/>
         </motion.div>
         <motion.div
@@ -27,8 +27,8 @@ export default function Header() {
           }}
           className="flex flex-col items-center md:items-start md:justify-center mt-[50px] mx-auto h-full"
         >
-          <div className="font-title md:text-[70px] text-[40px]">Samantha Michelle</div>
-          <div className="font-subtitle font-normal text-400">SOFTWARE ENGINEER</div>
+          <div className="font-title xl:text-[75px] md:text-[55px] text-[40px] text-center md:text-left">Samantha Michelle</div>
+          <div className="font-subtitle font-semibold text-[20px]">SOFTWARE ENGINEER</div>
         </motion.div>
       </div>
     </div>
