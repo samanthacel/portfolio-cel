@@ -1,8 +1,9 @@
 "use client";
+import React from "react";
  
 import { motion } from "framer-motion";
-import React from "react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { Skills } from "./skills";
 
 const words = `Undergraduate Computer Science student
 at BINUS University, specializing in
@@ -19,7 +20,9 @@ export function AboutMe() {
       <div className="w-[90%] bg-[var(--color-beige)] rounded-[16px] p-[40px]">
         <div className="font-subtitle font-bold text-[50px]">ABOUT ME</div>
         <TextGenerateEffect words={words} />
+        <Skills/>
       </div>
+      
     </>
     
   )
