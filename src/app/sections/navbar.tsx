@@ -2,22 +2,37 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const flexBetween = "flex items-center justify-between";
   const [isOpen, setOpen] = useState(false);
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setOpen(false); 
+    }
+  };
 
   return (
     <nav className="fixed top-0 z-30 w-full bg-[var(--color-offwhite)]">
       <div className={`${flexBetween} mx-auto w-[90%] py-2`}>
-        {/* <div className="font-title text-xl">cel</div> */}
         <img src="/img/cel-logo.ico" alt="logo" className="w-[60px]"/>
 
         <div className="hidden md:flex items-center gap-8 font-body">
-          <p className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors ">Home</p>
-          <p className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">About Me</p>
-          <p className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">Projects</p>
-          <p className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">Contacts</p>
+          <Link href="/" className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+            Home
+          </Link>
+          <button onClick={() => handleScroll("about-me")} className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+            About Me
+          </button>
+          <button onClick={() => handleScroll("projects")} className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+            Projects
+          </button>
+          <button onClick={() => handleScroll("contacts")} className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+            Contacts
+          </button>
         </div>
 
 
@@ -42,10 +57,18 @@ export default function Navbar() {
             className="absolute top-16 left-0 w-full shadow-md md:hidden"
           >
             <ul className="flex flex-col items-center gap-6 py-4 z-30 bg-[var(--color-offwhite)]">
-              <li className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">Home</li>
-              <li className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">About Me</li>
-              <li className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">Projects</li>
-              <li className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">Contacts</li>
+              <Link href="/" className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+                Home
+              </Link>
+              <button onClick={() => handleScroll("about-me")} className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+                About Me
+              </button>
+              <button onClick={() => handleScroll("projects")} className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+                Projects
+              </button>
+              <button onClick={() => handleScroll("contacts")} className="cursor-pointer hover:text-[var(--color-medbeige)] transition-colors">
+                Contacts
+              </button>
             </ul>
           </motion.div>
         )}

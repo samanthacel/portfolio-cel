@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
  
-import { motion } from "framer-motion";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Skills } from "./skills";
 
@@ -17,12 +16,11 @@ projects.`;
 export function AboutMe() {
   return (
     <>
-      <div className="w-[90%] bg-[var(--color-beige)] rounded-[16px] p-[40px]">
-        <div className="font-subtitle font-bold text-[50px]">ABOUT ME</div>
+      <section id="about-me" className="w-[90%] bg-[var(--color-beige)] rounded-[16px] p-[40px]">
+        <div className="font-subtitle font-bold text-[40px] md:text-[50px]">ABOUT ME</div>
         <TextGenerateEffect words={words} />
         <Skills/>
-      </div>
-      
+      </section>
     </>
     
   )
