@@ -2,7 +2,8 @@
 import React from "react";
  
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { Skills } from "./skills";
+import Skills from "./skills";
+import { TechStack } from "./techstack";
 
 const words = `Undergraduate Computer Science student
 at BINUS University, specializing in
@@ -20,6 +21,7 @@ export function AboutMe() {
         <div className="font-subtitle font-bold text-[40px] md:text-[50px]">ABOUT ME</div>
         <TextGenerateEffect words={words} />
         <Skills/>
+        <TechStack/>
       </section>
     </>
     

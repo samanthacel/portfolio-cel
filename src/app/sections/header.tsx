@@ -1,12 +1,11 @@
 "use client";
  
 import { motion } from "framer-motion";
-import Link from "next/link";
 import React from "react";
 
 export default function Header() {
   return (
-    <div className="relative z-0 h-[65vh] w-[90%] mb-[20vh]">
+    <div className="relative z-0 h-[65vh] w-[90%] mb-[18vh] mt-[40px]">
       <div className="flex flex-col md:flex-row items-center justify-center mx-auto h-full ">
         <motion.div
           initial={{ opacity: 0.0, y: 0 }}
@@ -16,7 +15,7 @@ export default function Header() {
             duration: 0.8,
             ease: "easeInOut",
           }} className="flex items-center justify-center w-full md:w-[550px]">
-          <img src="/img/profile-picture.png" alt="profile picture" className="w-[80%]"/>
+          <img src="/img/profile-picture.png" alt="profile picture" className="w-[65%] md:w-[80%]"/>
         </motion.div>
         <motion.div
           initial={{ opacity: 0.0, x: -40 }}

@@ -1,61 +1,35 @@
-import { CircleHover } from "../local ui/circle-hover";
+import { CardHover } from "../local ui/card-hover";
+import HoverDevCards from "../local ui/hover-dev-card";
 
-export function Skills() {
+export default function Skills() {
   return (
     <>
-      <div className="font-subtitle font-bold text-[30px] mt-[40px]">TECH STACK</div>
-      <CircleHover items={projects} />
+      <div className="mt-[20px] font-subtitle font-bold text-[35px] md:text-[40px]">SKILLS</div>
+      <HoverDevCards />
+      <CardHover items={projects} />
     </>
   )
 }
 
 export const projects = [
-    {
-      img: "./img/skills/java.png",
-      title: "Java"
-    },
-    {
-      img: "./img/skills/c++.png",
-      title: "C/C++"
-    },
-    {
-      img: "./img/skills/mysql.png",
-      title: "MySQL"
-    },
-    {
-      img: "./img/skills/python.png",
-      title: "Python"
-    },
-    {
-      img: "./img/skills/swiftui.png",
-      title: "SwiftUI"
-    },
-    {
-      img: "./img/skills/react.png",
-      title: "React.js"
-    },
-    {
-      img: "./img/skills/typescript.png",
-      title: "Typescript"
-    },
-    {
-      img: "./img/skills/html.png",
-      title: "HTML"
-    },
-    {
-      img: "./img/skills/css.png",
-      title: "CSS"
-    },
-    {
-      img: "./img/skills/js.png",
-      title: "Javascript"
-    },
-    {
-      img: "./img/skills/figma.png",
-      title: "Figma"
-    },
-    {
-      img: "./img/skills/android.png",
-      title: "Android"
-    },
-  ];
+  {
+    img: "./img/skills/se.png",
+    title: "Software Engineer"
+  },
+  {
+    img: "./img/skills/ui ux.png",
+    title: "UI/UX Design"
+  },
+  {
+    img: "./img/skills/frontend.png",
+    title: "Frontend Development"
+  },
+  {
+    img: "./img/skills/web mobile.png",
+    title: "Web & Mobile Development"
+  },
+  {
+    img: "./img/skills/tutor.png",
+    title: "Tutoring"
+  },
+];
