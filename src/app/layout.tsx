@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/img/cel-logo.ico" type="image/x-icon" />
+        <link rel="icon" href="/img/header-logo.ico" type="image/x-icon" />
       </head>
       <body
         className={`${montserrat.variable} ${playfair.variable} antialiased`}

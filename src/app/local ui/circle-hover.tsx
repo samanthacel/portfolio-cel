@@ -25,7 +25,7 @@ export const CircleHover = ({
   );
 
   return (
-    <div ref={ref} className="md:flex md:flex-wrap grid grid-cols-3">
+    <div ref={ref} className="flex flex-wrap md:w-full w-[110%] ml-[-10px]">
       {items.map((item, idx) => (
         <motion.div
           key={idx}
@@ -78,7 +78,7 @@ export const CircleHover = ({
             )}
           </AnimatePresence>
             <div className="relative z-20">
-              <img src={item.img} className="h-18 w-18 md:h-20 md:w-20" />
+              <img src={item.img} className="h-20 w-20" />
             </div>
         </motion.div>
       ))}
