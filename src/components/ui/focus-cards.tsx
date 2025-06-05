@@ -1,7 +1,8 @@
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { FiX } from "react-icons/fi";
+import { ProjectDetail } from "@/app/sections/projects-detail";
 
 export const Card = React.memo(
   ({
@@ -19,16 +20,10 @@ export const Card = React.memo(
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out",
+        "rounded-lg relative bg-gray-100 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out",
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
-      {/* <Image
-        src={card.src}
-        alt={card.title}
-        fill
-        className="object-cover absolute inset-0"
-      /> */}
       <img src={card.src} alt={card.title} className="object-cover absolute inset-0 w-full h-full"/>
       <div
         className={cn(
@@ -51,20 +46,106 @@ type Card = {
   src: string;
 };
 
-export function FocusCards({ cards }: { cards: Card[] }) {
-  const [hovered, setHovered] = useState<number | null>(null);
+const Modal = ({
+  onClose,
+  children,
+}: {
+  onClose: () => void;
+  children: React.ReactNode;
+}) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {cards.map((card, index) => (
-        <Card
-          key={card.title}
-          card={card}
-          index={index}
-          hovered={hovered}
-          setHovered={setHovered}
-        />
-      ))}
+    <div
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-[var(--color-offwhite)] rounded-xl w-[90vw] h-[90vh] relative p-8"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-[20px] text-gray-700 hover:text-gray-900 z-10"
+        >
+          <FiX />
+        </button>
+        <div
+          ref={scrollRef}
+          className="max-h-[75vh] overflow-y-auto pr-2"
+        >
+          {/* Clone children and inject scrollRef as a prop */}
+          {React.isValidElement(children)
+            ? React.cloneElement(children as React.ReactElement, {
+                scrollContainerRef: scrollRef,
+              })
+            : children}
+        </div>
+      </div>
     </div>
   );
+};
+
+
+
+export function FocusCards({ cards }: { cards: Card[] }) {
+  const [hovered, setHovered] = useState<number | null>(null);
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null);
+
+  return (
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {cards.map((card, index) => (
+          <div key={card.title} onClick={() => setSelectedCardIndex(index)}>
+            <Card
+              card={card}
+              index={index}
+              hovered={hovered}
+              setHovered={setHovered}
+            />
+          </div>
+        ))}
+      </div>
+      {selectedCardIndex !== null && (
+        <Modal onClose={() => setSelectedCardIndex(null)}>
+          <DummyContent card={cards[selectedCardIndex]} />
+        </Modal>
+      )}
+
+    </>
+  );
 }
+
+
+const DummyContent = ({ card }: { card: any }) => {
+  return (
+    <>
+      <div>
+        <div className="font-subtitle font-bold text-[60px]">{card.title}</div>
+        <div className="mt-[-8px] font-subtitle font-bold text-[24px] text-[var(--color-darkbeige)]">{card.project}</div>
+      </div>
+
+      <div className="mt-[60px]  text-[20px]">
+        {card.description}
+      </div>
+
+      <div className="mt-[32px] mb-[32px] flex gap-20">
+        <div className="mt-[20px]">
+          <div className="text-[12px]">Project Timeline</div>
+          <div className="font-semibold text-[18px]">December 2024</div>
+        </div>
+        <div className="mt-[20px]">
+          <div className="text-[12px]">Role</div>
+          <div className="font-semibold text-[18px]">Designer, Developer</div>
+        </div>
+        <div className="mt-[20px]">
+          <div className="text-[12px]">Tech</div>
+          <div className="font-semibold text-[18px]">Figma, Android Studio</div>
+        </div>
+      </div>
+
+      <ProjectDetail/>
+    </>
+  );
+};
+

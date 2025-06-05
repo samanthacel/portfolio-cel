@@ -3,7 +3,7 @@ import { CircleHover } from "../local ui/circle-hover";
 export function TechStack() {
   return (
     <>
-      <div className="font-subtitle font-bold text-[30px] mt-[40px]">TECH STACK</div>
+      <div className="font-subtitle font-bold text-[35px] mt-[40px]">TECH STACK</div>
       <CircleHover items={techstack} />
     </>
   )

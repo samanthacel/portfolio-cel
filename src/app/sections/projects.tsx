@@ -16,6 +16,8 @@ export function Projects() {
 const cards = [
   {
     title: "Planescaper",
+    project: "Mobile Programming Final Project",
+    description: "Android app to help you plan trips",
     src: "/img/projects/planescaper-cover.png",
   },
   {
