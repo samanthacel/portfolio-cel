@@ -16,13 +16,21 @@ export function Projects() {
 const cards = [
   {
     title: "Planescaper",
-    project: "Mobile Programming Final Project",
-    description: "Android app to help you plan trips",
     src: "/img/projects/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "Designer, Developer",
+    tech: "Figma, Android Studio"
   },
   {
     title: "C-Link",
     src: "/img/projects/clink-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "Android app to help you plan trips",
+    timeline: "December 2024",
+    role: "Designer, Developer",
+    tech: "Figma, Android Studio"
   },
   {
     title: "Inventory Management System",

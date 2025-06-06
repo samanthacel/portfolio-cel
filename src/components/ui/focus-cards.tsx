@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { FiX } from "react-icons/fi";
-import { ProjectDetail } from "@/app/sections/projects-detail";
 
 export const Card = React.memo(
   ({
@@ -46,6 +45,9 @@ type Card = {
   src: string;
 };
 
+import { motion, AnimatePresence } from "framer-motion";
+import { ProjectDesc } from "@/app/local ui/project-desc";
+
 const Modal = ({
   onClose,
   children,
@@ -56,35 +58,44 @@ const Modal = ({
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center px-4"
-      onClick={onClose}
-    >
-      <div
-        className="bg-[var(--color-offwhite)] rounded-xl w-[90vw] h-[90vh] relative p-8"
-        onClick={(e) => e.stopPropagation()}
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center px-4"
+        onClick={onClose}
       >
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-[20px] text-gray-700 hover:text-gray-900 z-10"
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="bg-[var(--color-offwhite)] rounded-xl w-[90vw] h-[90vh] relative p-8 overflow-hidden"
+          onClick={(e) => e.stopPropagation()}
         >
-          <FiX />
-        </button>
-        <div
-          ref={scrollRef}
-          className="max-h-[75vh] overflow-y-auto pr-2"
-        >
-          {/* Clone children and inject scrollRef as a prop */}
-          {React.isValidElement(children)
-            ? React.cloneElement(children as React.ReactElement, {
-                scrollContainerRef: scrollRef,
-              })
-            : children}
-        </div>
-      </div>
-    </div>
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-[20px] text-gray-700 hover:text-gray-900 z-10"
+          >
+            <FiX />
+          </button>
+          <div
+            ref={scrollRef}
+            className="max-h-[75vh] overflow-y-auto pr-2"
+          >
+            {React.isValidElement(children)
+              ? React.cloneElement(children as React.ReactElement, {
+                  scrollContainerRef: scrollRef,
+                })
+              : children}
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
+
 
 
 
@@ -132,20 +143,70 @@ const DummyContent = ({ card }: { card: any }) => {
       <div className="mt-[32px] mb-[32px] flex gap-20">
         <div className="mt-[20px]">
           <div className="text-[12px]">Project Timeline</div>
-          <div className="font-semibold text-[18px]">December 2024</div>
+          <div className="font-semibold text-[18px]">{card.timeline}</div>
         </div>
         <div className="mt-[20px]">
           <div className="text-[12px]">Role</div>
-          <div className="font-semibold text-[18px]">Designer, Developer</div>
+          <div className="font-semibold text-[18px]">{card.role}</div>
         </div>
         <div className="mt-[20px]">
           <div className="text-[12px]">Tech</div>
-          <div className="font-semibold text-[18px]">Figma, Android Studio</div>
+          <div className="font-semibold text-[18px]">{card.tech}</div>
         </div>
       </div>
 
-      <ProjectDetail/>
+      <ProjectDesc content={content}/>
     </>
   );
 };
+
+const content = [
+  {
+    title: "Problem Definition",
+    description:
+      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    content: (
+      <div className="flex align-center justify-center">
+        <img src="/img/projects/planescaper-cover.png" className="w-60"/>
+      </div>
+      
+    ),
+  },
+  {
+    title: "Solution",
+    description:
+      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center text-white">
+        <img
+          src="/linear.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Features",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+        Version control
+      </div>
+    ),
+  },
+  {
+    title: "Development",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+        Running out of content
+      </div>
+    ),
+  }
+];
 
