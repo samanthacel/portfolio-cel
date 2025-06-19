@@ -14,43 +14,509 @@ export function Projects() {
 }
 
 const cards = [
-  {
-    title: "Planescaper",
-    src: "/img/projects/planescaper-cover.png",
+  {title: "Planescaper",
+    src: "/img/projects/planescaper/planescaper-cover.png",
     project: "Mobile Programming Final Project",
     description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
     timeline: "December 2024",
-    role: "Designer, Developer",
-    tech: "Figma, Android Studio"
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
-  {
-    title: "C-Link",
-    src: "/img/projects/clink-cover.png",
+  {title: "Hearmony",
+    src: "/img/projects/planescaper/planescaper-cover.png",
     project: "Mobile Programming Final Project",
-    description: "Android app to help you plan trips",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
     timeline: "December 2024",
-    role: "Designer, Developer",
-    tech: "Figma, Android Studio"
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
-  {
-    title: "Inventory Management System",
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  {title: "C-Link",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
-  {
-    title: "DOOIT",
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  {title: "Inventory Management System",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
-  {
-    title: "AMN Karoseri",
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  {title: "DOOIT",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
-  {
-    title: "Dialert",
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  {title: "AMN Karoseri",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
-  {
-    title: "Comet",
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  {title: "ERamen",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
+  },
+  {title: "Dialert",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
+  },
+  {title: "Comet",
+    src: "/img/projects/planescaper/planescaper-cover.png",
+    project: "Mobile Programming Final Project",
+    description: "An android-based application to help user plan their trips, search for tour tickets, book trips, and explore destinations effortlessly",
+    timeline: "December 2024",
+    role: "UI/UX Designer, Fullstack Developer",
+    tech: "Figma, Android Studio, Firebase",
+    content: [
+      {
+        title: "Problem Definition",
+        description:
+          "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+        content: (
+          <div className="flex align-center justify-center">
+            <img src="/img/projects/planescaper/planescaper-home.png" className="w-[100px]"/>
+          </div>
+        ),
+      },
+      {
+        title: "Solution",
+        description:
+          "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center text-white">
+            <img
+              src="/linear.webp"
+              width={300}
+              height={300}
+              className="h-full w-full object-cover"
+              alt="linear board demo"
+            />
+          </div>
+        ),
+      },
+      {
+        title: "Features",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
+            Version control
+          </div>
+        ),
+      },
+      {
+        title: "Development",
+        description:
+          "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+        content: (
+          <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
+            Running out of content
+          </div>
+        ),
+      }
+    ]
   },
   
 ];

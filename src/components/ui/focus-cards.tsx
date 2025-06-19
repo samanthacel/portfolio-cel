@@ -19,19 +19,23 @@ export const Card = React.memo(
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "rounded-lg relative bg-gray-100 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out",
+        "rounded-lg relative overflow-hidden h-80 w-full transition-all duration-300 ease-out flex justify-center items-center shadow-black/30 shadow-xl bg-[linear-gradient(to_bottom,_white_0%,_var(--color-offwhite)_80%)]",
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
-      <img src={card.src} alt={card.title} className="object-cover absolute inset-0 w-full h-full"/>
+      <img src={card.src} alt={card.title} className="object-cover h-[90%]"/>
+
       <div
         className={cn(
           "absolute inset-0 bg-black/50 flex items-end py-8 px-4 transition-opacity duration-300",
           hovered === index ? "opacity-100" : "opacity-0"
         )}
       >
-        <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
-          {card.title}
+        <div className="flex-col">
+          <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+            {card.title}
+          </div>
+          <div className="text-white">{card.role}</div>
         </div>
       </div>
     </div>
@@ -47,6 +51,7 @@ type Card = {
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectDesc } from "@/app/local ui/project-desc";
+import AppleCardsCarouselDemo from "../example/apple-cards-carousel-demo-2";
 
 const Modal = ({
   onClose,
@@ -82,7 +87,7 @@ const Modal = ({
           </button>
           <div
             ref={scrollRef}
-            className="max-h-[75vh] overflow-y-auto pr-2"
+            className="max-h-[75vh]  pr-2"
           >
             {React.isValidElement(children)
               ? React.cloneElement(children as React.ReactElement, {
@@ -96,16 +101,13 @@ const Modal = ({
   );
 };
 
-
-
-
 export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null);
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
         {cards.map((card, index) => (
           <div key={card.title} onClick={() => setSelectedCardIndex(index)}>
             <Card
@@ -155,58 +157,9 @@ const DummyContent = ({ card }: { card: any }) => {
         </div>
       </div>
 
-      <ProjectDesc content={content}/>
+      <ProjectDesc content={card.content}/>
+      
     </>
   );
 };
-
-const content = [
-  {
-    title: "Problem Definition",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="flex align-center justify-center">
-        <img src="/img/projects/planescaper-cover.png" className="w-60"/>
-      </div>
-      
-    ),
-  },
-  {
-    title: "Solution",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="flex h-full w-full items-center justify-center text-white">
-        <img
-          src="/linear.webp"
-          width={300}
-          height={300}
-          className="h-full w-full object-cover"
-          alt="linear board demo"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "Features",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Development",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white">
-        Running out of content
-      </div>
-    ),
-  }
-];
 

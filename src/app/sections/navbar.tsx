@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 z-30 w-full bg-[var(--color-offwhite)]">
+    <nav className="fixed top-0 z-30 w-full bg-[var(--color-offwhite)]/95 backdrop-blur-md">
       <div className={`${flexBetween} mx-auto w-[90%] py-2`}>
         <img src="/img/cel-logo.ico" alt="logo" className="w-[60px]"/>
 
