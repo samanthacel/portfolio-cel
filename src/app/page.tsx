@@ -2,6 +2,7 @@ import Navbar from "./sections/navbar";
 import Header from "./sections/header";
 import { AboutMe } from "./sections/aboutme";
 import { Projects } from "./sections/projects";
+import Footer from "./sections/footer";
 
 export default function Home() {
   const navItems = [
@@ -15,7 +16,8 @@ export default function Home() {
       <Header />  
       <AboutMe />
       <Projects />
-      <div className="mt-[200px]"></div>
+      <div className="mt-[120px]"></div>
+      <Footer/>
     </>
   );
 }

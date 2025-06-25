@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import AppleCardsCarouselDemo from "@/components/example/apple-cards-carousel-demo-2";
 
 export const ProjectDesc = ({
   content,
