@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { FiX } from "react-icons/fi";
 
@@ -19,18 +19,20 @@ export const Card = React.memo(
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "rounded-lg relative overflow-hidden h-80 w-full transition-all duration-300 ease-out flex justify-center items-center shadow-black/30 shadow-xl bg-[linear-gradient(to_bottom,_white_0%,_var(--color-offwhite)_80%)]",
+        "rounded-lg relative overflow-hidden h-full w-full transition-all duration-300 ease-out flex justify-center items-center shadow-black/30 shadow-xl bg-[linear-gradient(to_bottom,_white_0%,_var(--color-offwhite)_80%)]",
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
       <img src={card.src} alt={card.title} className="object-cover h-[90%]"/>
-
       <div
         className={cn(
-          "absolute inset-0 bg-black/50 flex items-end py-8 px-4 transition-opacity duration-300",
-          hovered === index ? "opacity-100" : "opacity-0"
+          "absolute inset-0 flex items-end py-8 px-4 transition-opacity duration-300",
+          "xs:bg-black/50", 
+          "phone:bg-gradient-to-t phone:from-black/60 phone:to-transparent", 
+          hovered === index ? "xs:opacity-100" : "xs:opacity-0" 
         )}
       >
+
         <div className="flex-col">
           <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
             {card.title}
@@ -51,7 +53,6 @@ type Card = {
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ProjectDesc } from "@/app/local ui/project-desc";
-import AppleCardsCarouselDemo from "../example/apple-cards-carousel-demo-2";
 
 const Modal = ({
   onClose,
@@ -61,6 +62,21 @@ const Modal = ({
   children: React.ReactNode;
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
 
   return (
     <AnimatePresence>
@@ -85,10 +101,7 @@ const Modal = ({
           >
             <FiX />
           </button>
-          <div
-            ref={scrollRef}
-            className="max-h-[75vh]  pr-2"
-          >
+          <div ref={scrollRef} className="max-h-[75vh] pr-2">
             {React.isValidElement(children)
               ? React.cloneElement(children as React.ReactElement, {
                   scrollContainerRef: scrollRef,
@@ -134,28 +147,35 @@ const DummyContent = ({ card }: { card: any }) => {
   return (
     <>
       <div>
-        <div className="font-subtitle font-bold text-[60px]">{card.title}</div>
-        <div className="mt-[-8px] font-subtitle font-bold text-[24px] text-[var(--color-darkbeige)]">{card.project}</div>
+        <div className="font-subtitle font-bold md:text-[60px] text-[40px]">{card.title}</div>
+        <div className="font-subtitle font-bold md:text-[24px] text-[var(--color-darkbeige)]">{card.project}</div>
       </div>
 
-      <div className="mt-[60px]  text-[20px]">
+      <div className="md:mt-[40px] mt-[20px] md:text-[20px]">
         {card.description}
       </div>
 
-      <div className="mt-[32px] mb-[32px] flex gap-20">
-        <div className="mt-[20px]">
+      <div className="mt-[32px] mb-[32px] flex md:gap-20 gap-5 md:flex-row flex-col bg-[var(--color-beige)] rounded-3xl py-4 px-4">
+        <div>
           <div className="text-[12px]">Project Timeline</div>
-          <div className="font-semibold text-[18px]">{card.timeline}</div>
+          <div className="font-semibold text-[16px]">{card.timeline}</div>
         </div>
-        <div className="mt-[20px]">
+        <div>
           <div className="text-[12px]">Role</div>
-          <div className="font-semibold text-[18px]">{card.role}</div>
+          <div className="font-semibold text-[16px]">{card.role}</div>
         </div>
-        <div className="mt-[20px]">
+        <div>
           <div className="text-[12px]">Tech</div>
-          <div className="font-semibold text-[18px]">{card.tech}</div>
+          <div className="font-semibold text-[16px]">{card.tech}</div>
         </div>
       </div>
+
+      <a href={card.link}>
+        <button className="mt-[16px] mb-[16px] shadow-[inset_0_0_0_2px_#796b61] px-6 py-3 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[var(--color-darkbeige)] hover:text-white text-[var(--color-darkbeige)] transition duration-200 flex items-center gap-2">
+          Project Link
+        </button>
+      </a>
+        
 
       <ProjectDesc content={card.content}/>
       
