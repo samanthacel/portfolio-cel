@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
  
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { TextGenerateEffect } from "@/app/local ui/text-generate-effect";
 import Skills from "./skills";
 import { TechStack } from "./techstack";
 

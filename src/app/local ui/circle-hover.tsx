@@ -11,7 +11,7 @@ export const CircleHover = ({
     title: string;
   }[];
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0);

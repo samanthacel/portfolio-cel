@@ -1,18 +1,32 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { cn } from "@/lib/utils";
 import { FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import AppleCardsCarouselDemo from "@/components/example/apple-cards-carousel-demo-2";
 
 export type Card = {
   title: string;
   src: string;
   role: string;
   link?: string;
-  content: any[];
+  content: content[];
 };
+
+export type content = {
+  title? : string;
+  project?: string;
+  description?: string;
+  timeline?: string;
+  role?: string;
+  tech?: string;
+  link?: string;
+  report?: string;
+  problem?: string;
+  solution?: string;
+  features?: string;
+  development?: string;
+}
 
 export const Card = React.memo(
   ({
@@ -21,7 +35,7 @@ export const Card = React.memo(
     hovered,
     setHovered,
   }: {
-    card: any;
+    card: Card;
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
@@ -61,6 +75,23 @@ export function ProjectCard({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedCardIndex(null);
+      }
+    };
+
+    if (selectedCardIndex !== null) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedCardIndex]);
+
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
@@ -81,7 +112,6 @@ export function ProjectCard({ cards }: { cards: Card[] }) {
           content={cards[selectedCardIndex].content}
         />
       )}
-
     </>
   );
 }
@@ -91,7 +121,7 @@ const ProjectDetail = ({
   content,
 }: {
   onClose: () => void;
-  content: any[];
+  content: content[];
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeCard, setActiveCard] = useState(0);
@@ -196,7 +226,6 @@ const ProjectDetail = ({
                   animate={{ opacity: activeCard === 2? 1 : 0.3 }}
                   className="mb-20"
                 >
-                  {/* <AppleCardsCarouselDemo/> */}
                 </motion.div>
 
               </div>
@@ -209,14 +238,3 @@ const ProjectDetail = ({
   );
 };
 
-const images = [
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-  "/img/projects/planescaper/planescaper-cover.png",
-]

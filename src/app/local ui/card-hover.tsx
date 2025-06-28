@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -11,18 +11,8 @@ export const CardHover = ({
     title: string;
   }[];
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const springConfig = { stiffness: 100, damping: 5 };
-  const x = useMotionValue(0);
-  const rotate = useSpring(
-    useTransform(x, [-100, 100], [-45, 45]),
-    springConfig
-  );
-  const translateX = useSpring(
-    useTransform(x, [-100, 100], [-50, 50]),
-    springConfig
-  );
 
   return (
     <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5">

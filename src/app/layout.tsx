@@ -36,7 +36,7 @@ export default function RootLayout({
         <link rel="icon" href="/img/header-logo.ico" type="image/x-icon" />
       </head>
       <body
-        className={`${montserrat.variable} ${playfair.variable} antialiased`}
+        className={`${montserrat.variable} ${playfair.variable} ${lato.variable} antialiased`}
       >
         {children}
       </body>

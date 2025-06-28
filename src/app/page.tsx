@@ -5,11 +5,6 @@ import { Projects } from "./sections/projects";
 import Footer from "./sections/footer";
 
 export default function Home() {
-  const navItems = [
-    { name: "Home", link: "/", icon: "/img/cel-logo.ico" },
-    { name: "About", link: "/about", icon: "/img/cel-logo.ico"  },
-    { name: "Projects", link: "/projects", icon: "/img/cel-logo.ico"  },
-  ];
   return (
     <>
       <Navbar />

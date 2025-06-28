@@ -1,6 +1,6 @@
 import React from "react";
 import { IconType } from "react-icons";
-import { FiBookOpen, FiCode, FiCpu, FiCreditCard, FiFigma, FiMail, FiUser, FiUsers } from "react-icons/fi";
+import { FiBookOpen, FiCode, FiCpu, FiCreditCard, FiFigma } from "react-icons/fi";
 
 const HoverDevCards = () => {
   return (
