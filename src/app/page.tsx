@@ -8,11 +8,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Header />  
-      <AboutMe />
-      <Projects />
-      <div className="mt-[120px]"></div>
-      <Footer/>
+      <div className="flex flex-col items-center">
+        <Header />  
+        <AboutMe />
+        <Projects />
+        <div className="mt-[120px]"></div>
+        <Footer/>
+      </div>
     </>
   );
 }
